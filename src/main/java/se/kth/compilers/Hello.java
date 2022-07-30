@@ -6,6 +6,6 @@ public class Hello {
       System.out.printf("Hello %s!", args[0]);
       return;
     }
-    System.out.print("Hello World!");
+    System.out.print("Hello World!!");
   }
 }
