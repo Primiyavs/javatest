@@ -5,12 +5,12 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                echo '${env.BUILD_URL}'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
+                echo "${env.BUILD_URL}"
             }
         }
         stage('proceed to Deploy') {
