@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                echo '${env.BUILD_URL}'
             }
         }
         stage('Test') {
@@ -26,10 +27,10 @@ pipeline {
         }
     }
     post {
-    failure {
-        mail to: 'team@example.com',
-        subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-        body: "Something is wrong with ${env.BUILD_URL}"
+    always {
+        mail to: 'primiya.vs@gmail.com',
+        subject: "Pipeline: ${currentBuild.fullDisplayName}",
+        body: "Build URL: ${env.BUILD_URL}"
             }
     }
 }
