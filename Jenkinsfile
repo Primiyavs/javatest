@@ -16,6 +16,7 @@ pipeline {
         stage('proceed to Deploy') {
             steps {
                 script {
+                if {env.BRANCH_NAME == "master"} {
                     input 'Proceed for Deployment?'
                 }
             }
@@ -29,7 +30,6 @@ pipeline {
     post {
         always {
             echo 'One way or another, I have finished'
-            deleteDir() /* clean up our workspace */
         }
         success {
             echo 'I succeeded!'
