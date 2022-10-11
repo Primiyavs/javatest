@@ -32,6 +32,6 @@ class HelloTest {
   @Test
   public void mainTest_arg() {
     Hello.main(new String[] {"Sandra"});
-    Assertions.assertEquals("Hello Sandraaa!", outputStreamCaptor.toString());
+    Assertions.assertEquals("Hello Sandra!", outputStreamCaptor.toString());
   }
 }
